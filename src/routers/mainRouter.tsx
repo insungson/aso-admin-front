@@ -1,9 +1,9 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-// import { useAppSelector } from "../reducers/index";
+import { useAppSelector } from "@reducers/index";
 import {} from "@reducers/slices";
 
 const MainRoute: React.FC<{}> = () => {
-  // const { userInfo } = useAppSelector(({ AUTH }) => AUTH);
+  const { userInfo } = useAppSelector(({ AUTH }) => AUTH);
   return (
     <Routes>
       <Route path="/login" element={<>login</>} />
@@ -13,12 +13,12 @@ const MainRoute: React.FC<{}> = () => {
       <Route path="/cancle" element={<>cancle</>} />
       <Route path="/notice" element={<>notice</>} />
       <Route path="/inquiry" element={<>inquiry</>} />
-      {/* <Route
+      <Route
         path="*"
         element={
           userInfo ? <Navigate to={"/main"} /> : <Navigate to={"/login"} />
         }
-      /> */}
+      />
     </Routes>
   );
 };
