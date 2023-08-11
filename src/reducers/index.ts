@@ -17,7 +17,7 @@ import { authReducer, authSliceName } from "./slices";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["PERSIST"],
+  whitelist: ["AUTH"],
 };
 
 const reducers = combineReducers({
@@ -37,6 +37,7 @@ const store = configureStore({
   devTools: process.env.REACT_APP_ENV_MODE !== "prod",
 });
 
+export const persistor = persistStore(store);
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 export const useAppDispatch = () => useDispatch<AppDispatch>();
