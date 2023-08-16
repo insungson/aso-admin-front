@@ -6,7 +6,7 @@ export const LeftMenuList: ILeftMenu[] = [
     name: "member",
     url: "",
     seq: 0,
-    className: "",
+    className: "nav-app",
     children: [
       {
         code: "member",
@@ -36,7 +36,7 @@ export const LeftMenuList: ILeftMenu[] = [
     name: "manage",
     url: "",
     seq: 0,
-    className: "",
+    className: "nav-app",
     children: [
       {
         code: "notice",

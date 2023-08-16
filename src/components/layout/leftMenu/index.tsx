@@ -8,7 +8,7 @@ const LeftMenu = () => {
       <div>
         <h1>
           <Link to={"/main"}>
-            ASO Index Admin (여기 클릭 시 main 으로 넘어가야함.)
+            <span className="nav-main">AIX Admin</span>
           </Link>
         </h1>
         <div>

@@ -7,12 +7,10 @@ const LayoutWrapper = () => {
   return (
     <div id="wrap">
       {/* leftMenu 관련 */}
-      <div id="wrap">
-        <div className="left-content active">
-          <Suspense fallback={<>loading...</>}>
-            <LeftMenu />
-          </Suspense>
-        </div>
+      <div className="left-content active">
+        <Suspense fallback={<>loading...</>}>
+          <LeftMenu />
+        </Suspense>
       </div>
       {/* 메인페이지 관련 */}
       <div className="main-content">

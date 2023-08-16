@@ -9,7 +9,7 @@ const LeftMenuItems = () => {
       {leftMenuModel.LeftMenuList.sort((a, b) => a.seq - b.seq).map((item) => (
         <Fragment key={item.code}>
           <h2 className="nav-tit">
-            <Link to={"#"}></Link>
+            <Link to={"#"}>{item.name}</Link>
           </h2>
           <nav className={item.className}>
             {item.children
