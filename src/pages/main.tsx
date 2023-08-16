@@ -1,6 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, Suspense, lazy } from "react";
 import { useAppDispatch, useAppSelector } from "@reducers/index";
 import { mainThunks } from "@reducers/slices";
+
+const UserStatusBox = lazy(() => import("@components/main/userStatusBox"));
 
 const Main = () => {
   const dispatch = useAppDispatch();
@@ -15,7 +17,13 @@ const Main = () => {
       dispatch(mainThunks.getUserNotice());
     }
   }, []);
-  return <>Main</>;
+  return (
+    <>
+      <Suspense fallback={<>loading...</>}>
+        <UserStatusBox />
+      </Suspense>
+    </>
+  );
 };
 
 export default Main;
