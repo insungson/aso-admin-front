@@ -8397,7 +8397,7 @@ ul[role="listbox"] input[placeholder="Search"] {
 .half_module {
   display: flex;
   align-items: center;
-  width: calc(50% - 50px);
+  /* width: calc(50% - 50px); */
   padding: 15px 20px 12px 20px;
   border-radius: 10px;
   border: solid 1px #e9e9e9;
@@ -8509,7 +8509,7 @@ ul[role="listbox"] input[placeholder="Search"] {
 .appinfo_statelist li .apple {
   background-image: url("../images/Apple.png");
 }
-.appinfo_statelist li span {
+/* .appinfo_statelist li span {
   display: block;
   max-width: 80px;
   overflow: hidden;
@@ -8520,7 +8520,7 @@ ul[role="listbox"] input[placeholder="Search"] {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   word-break: keep-all;
-}
+} */
 
 .period_select_bx {
   position: relative;
@@ -9544,9 +9544,9 @@ ul[role="listbox"] input[placeholder="Search"] {
   .half_module_bx {
     flex-wrap: wrap;
   }
-  .half_module {
+  /* .half_module {
     width: 100%;
-  }
+  } */
   .half_module:first-child {
     margin-bottom: 10px;
   }

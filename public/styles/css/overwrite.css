@@ -1,7 +1,54 @@
-.nav-main {
+.leftmenu-nav {
   padding: 20px 0 4px 24px;
   font-size: 30px;
   font-weight: 500;
   letter-spacing: 0.15px;
   color: #fff;
+}
+.main-nav {
+  display: flex;
+}
+.main-nav-left {
+  width: 60%;
+  align-items: center;
+  padding: 15px 20px 12px 20px;
+  border-radius: 10px;
+  border: solid 1px #e9e9e9;
+  background-color: #fff;
+}
+.main-nav-right {
+  width: 30%;
+  margin: 0 0 0 10px;
+  align-items: center;
+  padding: 15px 20px 12px 20px;
+  border-radius: 10px;
+  border: solid 1px #e9e9e9;
+  background-color: #fff;
+}
+.inquiry-box {
+  align-items: center;
+  padding: 15px 20px 12px 20px;
+  border-radius: 10px;
+  border: solid 1px #e9e9e9;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-left-width: 0px;
+  background-color: #fff;
+}
+.appinfo_statelist_strong {
+  text-align: left;
+}
+.appinfo_statelist_span {
+  text-align: right;
+  display: block;
+  max-width: 80px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: keep-all;
+}
+.calendar-button-right {
+  margin-left: auto;
 }

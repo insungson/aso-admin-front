@@ -8,7 +8,7 @@ const LeftMenu = () => {
       <div>
         <h1>
           <Link to={"/main"}>
-            <span className="nav-main">AIX Admin</span>
+            <span className="leftmenu-nav">AIX Admin</span>
           </Link>
         </h1>
         <div>
