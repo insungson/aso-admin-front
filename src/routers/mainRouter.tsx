@@ -6,6 +6,7 @@ import {} from "@reducers/slices";
 import LayoutWrapper from "@components/layout/layoutWrapper";
 import Login from "@pages/login";
 import Main from "@pages/main";
+import Member from "@pages/member";
 
 const MainRoute: React.FC<{}> = () => {
   const { userInfo } = useAppSelector(({ AUTH }) => AUTH);
@@ -13,7 +14,7 @@ const MainRoute: React.FC<{}> = () => {
     <Routes>
       <Route element={<LayoutWrapper />}>
         <Route path="/main" element={<Main />} />
-        <Route path="/member" element={<>member</>} />
+        <Route path="/member" element={<Member />} />
         <Route path="/subscribe" element={<>subscribe</>} />
         <Route path="/cancle" element={<>cancle</>} />
         <Route path="/notice" element={<>notice</>} />

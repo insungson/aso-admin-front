@@ -19,17 +19,12 @@ const ColumnStackClickChartAtom: React.FC<{
 
   useEffect(() => {
     if (chartData) {
-      const { series, xAxis, legend, tooltip } = chartData;
-      setChartOption(createOptions(series, xAxis, legend, tooltip));
+      const { series, xAxis } = chartData;
+      setChartOption(createOptions(series, xAxis));
     }
   }, [chartData]);
 
-  const createOptions = (
-    series,
-    xAxis,
-    legend,
-    tooltip
-  ): IHighchart.IHighChartModel => {
+  const createOptions = (series, xAxis): IHighchart.IHighChartModel => {
     return {
       ...new BaseChart().setBasicHighChartOption(),
       chart: {
@@ -38,13 +33,11 @@ const ColumnStackClickChartAtom: React.FC<{
       xAxis,
       series: series,
       // yAxis: yAxis,
-      legend,
       plotOptions: {
         column: {
           stacking: "normal",
         },
       },
-      tooltip,
     };
   };
 

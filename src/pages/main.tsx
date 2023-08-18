@@ -8,6 +8,7 @@ const CustomerInquiryBox = lazy(
 );
 const DAUBOX = lazy(() => import("@components/main/main.dauBox"));
 const UserDAUBOX = lazy(() => import("@components/main/main.userDauBox"));
+const UserNoticeBOX = lazy(() => import("@components/main/main.userNoticeBox"));
 
 const Main = () => {
   const dispatch = useAppDispatch();
@@ -41,7 +42,12 @@ const Main = () => {
             <UserDAUBOX />
           </Suspense>
         </div>
-        <div className="score-box">56</div>
+        <div className="score-box">
+          <h2 className="score-tit">사용자 안내(공지) 관리</h2>
+          <Suspense fallback={<>loading...</>}>
+            <UserNoticeBOX />
+          </Suspense>
+        </div>
       </div>
     </>
   );

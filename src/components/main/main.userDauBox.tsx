@@ -3,7 +3,7 @@ import DatePickerRangeButton from "@components/layout/datepicker/rangeButton";
 import { dateUtil } from "@utils/common";
 import moment from "moment";
 import { useAppDispatch, useAppSelector } from "@reducers/index";
-import LineChartAtom from "@components/highchart/highchart.line";
+import ColumnStackClickChartAtom from "@components/highchart/highchart.columnStack";
 import { CreateMainPageOptions } from "@classes/highchart/mainPageCharts";
 import { mainThunks } from "@reducers/slices/index";
 
@@ -39,6 +39,12 @@ const UserDAUBOX = () => {
         </div>
       </h2>
       {/* 스택컬럼차트 */}
+      <div className="chart-api">
+        <ColumnStackClickChartAtom
+          chartData={new CreateMainPageOptions().getUserDAU(userDau)}
+          height="300px"
+        />
+      </div>
     </div>
   );
 };
