@@ -9,7 +9,8 @@
       "@pages/*": ["src/pages/*"],
       "@reducers/*": ["src/reducers/*"],
       "@utils/*": ["src/utils/*"],
-      "@styles/*": ["src/styles/*"]
+      "@styles/*": ["src/styles/*"],
+      "@apis/*": ["src/apis/*"]
     }
   }
 }

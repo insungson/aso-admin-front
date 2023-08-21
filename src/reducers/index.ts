@@ -17,6 +17,8 @@ import {
   authSliceName,
   mainReducer,
   mainSliceName,
+  memberReducer,
+  memberSliceName,
 } from "./slices";
 
 const persistConfig = {
@@ -28,6 +30,7 @@ const persistConfig = {
 const reducers = combineReducers({
   [authSliceName]: authReducer,
   [mainSliceName]: mainReducer,
+  [memberSliceName]: memberReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducers);
