@@ -7,6 +7,7 @@ import LayoutWrapper from "@components/layout/layoutWrapper";
 import Login from "@pages/login";
 import Main from "@pages/main";
 import Member from "@pages/member";
+import Notice from "@pages/notice";
 
 const MainRoute: React.FC<{}> = () => {
   const { userInfo } = useAppSelector(({ AUTH }) => AUTH);
@@ -17,7 +18,7 @@ const MainRoute: React.FC<{}> = () => {
         <Route path="/member" element={<Member />} />
         <Route path="/subscribe" element={<>subscribe</>} />
         <Route path="/cancle" element={<>cancle</>} />
-        <Route path="/notice" element={<>notice</>} />
+        <Route path="/notice" element={<Notice />} />
         <Route path="/inquiry" element={<>inquiry</>} />
       </Route>
       <Route path="/login" element={<Login />} />

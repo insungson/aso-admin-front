@@ -99,3 +99,17 @@
   margin-left: 5px;
   background-color: #495057;
 }
+.notice_search_input {
+  margin: 0 30px 0 0;
+  color: #333;
+  font-size: 14px;
+  font-weight: 300;
+  background: #fff;
+  line-height: 36px;
+  width: 100%;
+  border: 1px solid #d0d5d8;
+  padding-left: 10px;
+}
+.notice_search_input:focus {
+  outline: 1px solid #0bb783;
+}

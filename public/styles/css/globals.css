@@ -4724,9 +4724,9 @@ ul[role="listbox"] input[placeholder="Search"] {
   display: block;
 }
 
-.keyword-search .search-box {
+/* .keyword-search .search-box {
   padding: 0 17px 15px 21px;
-}
+} */
 
 .keyword-search .search-btn {
   margin-right: 0;
