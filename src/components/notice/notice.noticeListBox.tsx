@@ -23,7 +23,7 @@ const NoticeListBox = () => {
         )
       );
     }
-  }, [filterObj]);
+  }, [filterObj, noticeList]);
 
   const onClickDeploy = useCallback(async (obj: INoticeListInfo) => {
     const result = await fetchPutNoticeDeploy(obj);
@@ -34,9 +34,14 @@ const NoticeListBox = () => {
 
   const onClickEdit = useCallback((obj: INoticeListInfo) => {
     // 수정 팝업 띄우는 처리하기!!
+    dispatch(noticeThunks.getNoticeInfoDetail(obj));
   }, []);
 
-  return <>NoticeListBox</>;
+  return (
+    <div className="table-api-wrap">
+      <div className="table-api">{gridOption && <Grid {...gridOption} />}</div>
+    </div>
+  );
 };
 
 export default NoticeListBox;

@@ -6,6 +6,9 @@ const SearchBox = lazy(() => import("@components/notice/notice.searchBox"));
 const NoticeListBox = lazy(
   () => import("@components/notice/notice.noticeListBox")
 );
+const CreateNoticeBox = lazy(
+  () => import("@components/notice/notice.createNoticeBox")
+);
 
 const Notice = () => {
   const dispatch = useAppDispatch();
@@ -21,6 +24,9 @@ const Notice = () => {
       </Suspense>
       <Suspense fallback={<>loading...</>}>
         <NoticeListBox />
+      </Suspense>
+      <Suspense fallback={<>loading...</>}>
+        <CreateNoticeBox />
       </Suspense>
     </div>
   );

@@ -1,4 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { INoticeListInfo } from "@models/notice";
 
 /**
  * 공지내역 리스트 요청
@@ -11,7 +12,7 @@ export const getNoticeListThunk = createAsyncThunk(
         {
           seq: 0,
           title: "구글플레이",
-          contents: "컨텐츠",
+          contents: "구글컨텐츠",
           deploy: true,
           writer: "tester1",
           registerDatetime: "2023-08-22T05:29:13.167Z",
@@ -21,7 +22,7 @@ export const getNoticeListThunk = createAsyncThunk(
         {
           seq: 1,
           title: "애플스토어",
-          contents: "컨텐츠",
+          contents: "애플컨텐츠",
           deploy: true,
           writer: "tester2",
           link: "www.google.com",
@@ -33,7 +34,7 @@ export const getNoticeListThunk = createAsyncThunk(
         {
           seq: 2,
           title: "구글플레이-테스트1",
-          contents: "컨텐츠",
+          contents: "구글컨텐츠-테스트1",
           deploy: true,
           writer: "tester3",
           link: "www.google.com",
@@ -45,7 +46,7 @@ export const getNoticeListThunk = createAsyncThunk(
         {
           seq: 3,
           title: "애플스토어-테스트2",
-          contents: "컨텐츠",
+          contents: "애플컨텐츠-테스트2",
           deploy: true,
           writer: "tester4",
           link: "www.google.com",
@@ -57,7 +58,7 @@ export const getNoticeListThunk = createAsyncThunk(
         {
           seq: 4,
           title: "원스토어",
-          contents: "컨텐츠",
+          contents: "원스토어 컨텐츠",
           deploy: true,
           writer: "tester5",
           link: "www.google.com",
@@ -79,7 +80,8 @@ export const getNoticeListThunk = createAsyncThunk(
  */
 export const getNoticeInfoDetail = createAsyncThunk(
   "getNoticeInfoDetail",
-  async (params, { rejectWithValue }) => {
+  async (params: INoticeListInfo, { rejectWithValue }) => {
+    console.log("getNoticeInfoDetail params: ", params);
     try {
       const response = await Promise.resolve({
         seq: 4,

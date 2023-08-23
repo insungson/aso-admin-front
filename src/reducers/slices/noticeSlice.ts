@@ -7,6 +7,7 @@ const noticeSlice = createSlice({
   initialState: {
     noticeList: [] as noticeModel.INoticeListInfo[],
     filterObj: {},
+    editNoticeInfo: {} as noticeModel.INoticeInfo | {}, //공지 수정 시 팝업에 뜨는 정보
   },
   reducers: {
     // 배포 스위치버튼 클릭 시
@@ -16,7 +17,7 @@ const noticeSlice = createSlice({
     ) => {
       state.noticeList = state.noticeList.map((item) => {
         if (item.seq === payload.seq) {
-          return { ...item, deploy: !item.deploy };
+          return { ...item, deploy: !payload.deploy };
         } else {
           return item;
         }
@@ -45,6 +46,13 @@ const noticeSlice = createSlice({
     ) => {
       state.filterObj = payload;
     },
+    // 공지 사항 수정시 초기정보 (+팝업 오픈/닫기 처리)
+    setEditNoticeInfo: (
+      state,
+      { payload }: PayloadAction<noticeModel.INoticeInfo | {}>
+    ) => {
+      state.editNoticeInfo = payload;
+    },
   },
   extraReducers: (builder) => {
     // 공지관리 리스트 요청
@@ -57,7 +65,9 @@ const noticeSlice = createSlice({
     // 공지관리 세부 요청
     builder.addCase(
       thunks.getNoticeInfoDetail.fulfilled,
-      (state, { payload, meta: { requestStatus } }) => {}
+      (state, { payload, meta: { requestStatus } }) => {
+        state.editNoticeInfo = payload;
+      }
     );
   },
 });

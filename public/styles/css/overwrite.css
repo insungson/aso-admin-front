@@ -113,3 +113,16 @@
 .notice_search_input:focus {
   outline: 1px solid #0bb783;
 }
+.notice_create_btn {
+  float: right;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+.notice_popup_table_th span {
+  display: block;
+  text-align: center;
+}
+.notice_editor {
+  height: 100px !important;
+  border: 1px solid #d0d5d8;
+}

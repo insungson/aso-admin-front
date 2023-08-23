@@ -16,8 +16,8 @@ export class CreateNoticePageOptions {
     let data = chartUtil.getArrayByValidate(responseData);
     let columns = [
       {
-        name: "No",
-        selector: (row: INoticeListInfo, index) => index + 1,
+        name: <div style={{ textAlign: "center", width: "50px" }}>No</div>,
+        selector: (row: INoticeListInfo, index) => row.seq,
         sortable: true,
       },
       {
@@ -84,9 +84,9 @@ export class CreateNoticePageOptions {
         // selector: () => ,
         cell: (row: INoticeListInfo) => {
           return (
-            <>
+            <div style={{ textAlign: "center", marginLeft: "20px" }}>
               <button onClick={() => editFn(row)}>[수정]</button>
-            </>
+            </div>
           );
         },
         sortable: false,
