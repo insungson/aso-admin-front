@@ -1,15 +1,18 @@
 import "react-quill/dist/quill.snow.css";
 import { FC, useState, useEffect } from "react";
 import PopupWrapper from "@components/popup/popupWrapper";
-import { useAppSelector } from "@reducers/index";
+import { useAppSelector, useAppDispatch } from "@reducers/index";
 import moment from "moment";
 import ReactQuill from "react-quill";
+import { fetchPostWriteNotice } from "@apis/index";
+import { noticeThunks, noticeSliceActions } from "@reducers/slices/index";
 
 interface IPropsNoticePopup {
   onClickPopupClosed: () => void;
 }
 
 const NoticePopup: FC<IPropsNoticePopup> = ({ onClickPopupClosed }) => {
+  const dispatch = useAppDispatch();
   const { editNoticeInfo } = useAppSelector(({ NOTICE }) => NOTICE);
 
   const [noticeState, setNoticeState] = useState({
@@ -133,6 +136,17 @@ const NoticePopup: FC<IPropsNoticePopup> = ({ onClickPopupClosed }) => {
         return setNoticeState((prev) => ({ ...prev, deploy: !prev.deploy }));
       default:
         break;
+    }
+  };
+
+  const onClickWriteNotice = async () => {
+    const response = await fetchPostWriteNotice(noticeState);
+    if (response) {
+      // 리스트 재요청 + 공지수정 정보 초기화처리
+      dispatch(noticeThunks.getNoticeListThunk());
+      dispatch(noticeSliceActions.setEditNoticeInfo({}));
+      // 팝업 닫기처리
+      onClickPopupClosed();
     }
   };
 
@@ -595,7 +609,11 @@ const NoticePopup: FC<IPropsNoticePopup> = ({ onClickPopupClosed }) => {
                   </tbody>
                 </table>
                 <div className="notice_editor_btn">
-                  <button className="btn pri">공지작성</button>
+                  <button className="btn pri" onClick={onClickWriteNotice}>
+                    {Object.keys(editNoticeInfo).length > 0
+                      ? "공지수정"
+                      : "공지작성"}
+                  </button>
                 </div>
               </div>
             </div>
