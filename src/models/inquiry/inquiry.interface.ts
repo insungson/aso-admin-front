@@ -8,6 +8,7 @@ export interface IInquiryListInfo {
   registerDatetime: string;
   categoryName: string;
   categoryCode: number;
+  country: string;
   answerContents: string;
   answerWriter: string;
   adminId: string;
@@ -20,5 +21,19 @@ export interface IRequestInquiryList {
   categoryCode: string;
   startDate: string;
   endDate: string;
-  isAnswered: boolean;
+  isAnswered: string;
+}
+
+export interface IInquiryDetailInfo {
+  inquiryInfo: {
+    seq: number;
+    title: string;
+    inquiryCategoryCode: number;
+    memberId: string;
+    contents: string;
+    writer: string;
+    registerDatetime: string;
+    adminId: string;
+  };
+  files: string[];
 }

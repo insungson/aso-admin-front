@@ -1,8 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { IRequestInquiryList } from "@models/inquiry";
 
 export const getInquiryListThunk = createAsyncThunk(
   "getInquiryListThunk",
-  async (params: "list" | "user", { rejectWithValue }) => {
+  async (params: IRequestInquiryList, { rejectWithValue }) => {
     try {
       const listData = [
         {
@@ -11,10 +12,11 @@ export const getInquiryListThunk = createAsyncThunk(
           writer: "bob@aixinc.io",
           memberId: "123",
           contents: "<b>test1</b>",
-          isAnswerd: true,
+          isAnswerd: false,
           registerDatetime: "2023-08-24T07:58:37.631Z",
           categoryName: "가이드",
           categoryCode: 0,
+          country: "US",
           answerContents: "<p>test answer1<p>",
           answerWriter: "bob@aixinc.io",
           adminId: "admin@aixinc.io",
@@ -26,9 +28,10 @@ export const getInquiryListThunk = createAsyncThunk(
           writer: "bob@aixinc.io",
           memberId: "123",
           contents: "<b>test1</b>",
-          isAnswerd: true,
+          isAnswerd: false,
           registerDatetime: "2023-08-24T07:58:37.631Z",
           categoryName: "가이드",
+          country: "US",
           categoryCode: 0,
           answerContents: "<p>test answer1<p>",
           answerWriter: "bob@aixinc.io",
@@ -41,9 +44,10 @@ export const getInquiryListThunk = createAsyncThunk(
           writer: "bob@aixinc.io",
           memberId: "123",
           contents: "<b>test1</b>",
-          isAnswerd: true,
+          isAnswerd: false,
           registerDatetime: "2023-08-24T07:58:37.631Z",
           categoryName: "가이드",
+          country: "US",
           categoryCode: 0,
           answerContents: "<p>test answer1<p>",
           answerWriter: "bob@aixinc.io",
@@ -56,9 +60,10 @@ export const getInquiryListThunk = createAsyncThunk(
           writer: "bob@aixinc.io",
           memberId: "123",
           contents: "<b>test1</b>",
-          isAnswerd: true,
+          isAnswerd: false,
           registerDatetime: "2023-08-24T07:58:37.631Z",
           categoryName: "가이드",
+          country: "US",
           categoryCode: 0,
           answerContents: "<p>test answer1<p>",
           answerWriter: "bob@aixinc.io",
@@ -71,9 +76,10 @@ export const getInquiryListThunk = createAsyncThunk(
           writer: "bob@aixinc.io",
           memberId: "123",
           contents: "<b>test1</b>",
-          isAnswerd: true,
+          isAnswerd: false,
           registerDatetime: "2023-08-24T07:58:37.631Z",
           categoryName: "가이드",
+          country: "US",
           categoryCode: 0,
           answerContents: "<p>test answer1<p>",
           answerWriter: "bob@aixinc.io",
@@ -86,9 +92,10 @@ export const getInquiryListThunk = createAsyncThunk(
           writer: "bob@aixinc.io",
           memberId: "123",
           contents: "<b>test1</b>",
-          isAnswerd: true,
+          isAnswerd: false,
           registerDatetime: "2023-08-24T07:58:37.631Z",
           categoryName: "가이드",
+          country: "US",
           categoryCode: 0,
           answerContents: "<p>test answer1<p>",
           answerWriter: "bob@aixinc.io",
@@ -106,6 +113,7 @@ export const getInquiryListThunk = createAsyncThunk(
           isAnswerd: true,
           registerDatetime: "2023-08-24T07:58:37.631Z",
           categoryName: "가이드",
+          country: "US",
           categoryCode: 0,
           answerContents: "<p>test answer1<p>",
           answerWriter: "bob@aixinc.io",
@@ -121,6 +129,7 @@ export const getInquiryListThunk = createAsyncThunk(
           isAnswerd: true,
           registerDatetime: "2023-08-24T07:58:37.631Z",
           categoryName: "가이드",
+          country: "US",
           categoryCode: 0,
           answerContents: "<p>test answer1<p>",
           answerWriter: "bob@aixinc.io",
@@ -136,6 +145,7 @@ export const getInquiryListThunk = createAsyncThunk(
           isAnswerd: true,
           registerDatetime: "2023-08-24T07:58:37.631Z",
           categoryName: "가이드",
+          country: "US",
           categoryCode: 0,
           answerContents: "<p>test answer1<p>",
           answerWriter: "bob@aixinc.io",
@@ -144,7 +154,7 @@ export const getInquiryListThunk = createAsyncThunk(
         },
       ];
       const response = await Promise.resolve(
-        params === "list" ? listData : userListData
+        params.isAnswered === "0" ? listData : userListData
       );
       return response;
     } catch (error) {

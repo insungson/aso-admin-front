@@ -14,7 +14,7 @@ const inquirySlice = createSlice({
     // 문의 답변 수정 시
     setAnswerInquiryInfo: (
       state,
-      { payload }: PayloadAction<inquiryModel.IInquiryListInfo>
+      { payload }: PayloadAction<inquiryModel.IInquiryListInfo | {}>
     ) => {
       state.answerInquiryInfo = payload;
     },
