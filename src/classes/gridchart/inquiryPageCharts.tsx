@@ -17,6 +17,7 @@ export class CreateInquiryPageOptions {
       {
         name: <div style={{ textAlign: "center", width: "50px" }}>No</div>,
         selector: (row: IInquiryListInfo, index) => row.seq,
+        center: true,
         sortable: true,
       },
       {
@@ -28,6 +29,7 @@ export class CreateInquiryPageOptions {
         name: "언어",
         selector: (row: IInquiryListInfo) => row.country,
         cell: (row: IInquiryListInfo) => String(row.country).toUpperCase(),
+        center: true,
         sortable: true,
       },
       {
@@ -43,11 +45,14 @@ export class CreateInquiryPageOptions {
         cell: (row: IInquiryListInfo) => {
           return <>{row.isAnswerd ? "완료" : "미완료"}</>;
         },
+        center: true,
+
         sortable: true,
       },
       {
         name: "처리자",
         selector: (row: IInquiryListInfo) => row.answerWriter,
+        center: true,
         sortable: true,
       },
       {
@@ -62,6 +67,7 @@ export class CreateInquiryPageOptions {
             </>
           );
         },
+        center: true,
         sortable: true,
       },
       {
@@ -73,10 +79,34 @@ export class CreateInquiryPageOptions {
             </div>
           );
         },
+        center: true,
         sortable: false,
       },
     ];
 
     return { data, columns };
+  }
+
+  getUserInquiryList(
+    responsedData: IInquiryListInfo[],
+    editFn: (params: IInquiryListInfo) => void,
+    currentObj: IInquiryListInfo
+  ) {
+    const conditionalRowStyles = [
+      {
+        when: (row: IInquiryListInfo) => row.seq === currentObj.seq,
+        style: {
+          backgroundColor: "rgba(63, 195, 128, 0.9)",
+          color: "white",
+          "&:hover": {
+            cursor: "pointer",
+          },
+        },
+      },
+    ];
+    return {
+      ...this.getInquiryList(responsedData, editFn),
+      conditionalRowStyles,
+    };
   }
 }

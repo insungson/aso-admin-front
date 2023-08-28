@@ -18,16 +18,19 @@ export class CreateNoticePageOptions {
       {
         name: <div style={{ textAlign: "center", width: "50px" }}>No</div>,
         selector: (row: INoticeListInfo, index) => row.seq,
+        center: true,
         sortable: true,
       },
       {
         name: "제목",
         selector: (row: INoticeListInfo) => row.title,
+        center: true,
         sortable: true,
       },
       {
         name: "내용",
         selector: (row: INoticeListInfo) => row.contents,
+        center: true,
         sortable: true,
       },
       {
@@ -49,11 +52,13 @@ export class CreateNoticePageOptions {
             </>
           );
         },
+        center: true,
         sortable: true,
       },
       {
         name: "작성자",
         selector: (row: INoticeListInfo) => row.writer,
+        center: true,
         sortable: true,
       },
       {
@@ -64,6 +69,7 @@ export class CreateNoticePageOptions {
             <>{moment(row.registerDatetime).format("YYYY.MM.DD, HH:mm")}</>
           );
         },
+        center: true,
         sortable: true,
       },
       {
@@ -77,6 +83,7 @@ export class CreateNoticePageOptions {
             </>
           );
         },
+        center: true,
         sortable: false,
       },
       {
@@ -89,6 +96,7 @@ export class CreateNoticePageOptions {
             </div>
           );
         },
+        center: true,
         sortable: false,
       },
     ];

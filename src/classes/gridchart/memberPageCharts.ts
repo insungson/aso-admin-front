@@ -13,37 +13,44 @@ export class CreateMemberPageOptions {
       {
         name: "계정",
         selector: (row: IMemberListInfo) => row.email,
+        center: true,
         sortable: true,
       },
       {
         name: "OpenID",
         selector: (row: IMemberListInfo) => row.provider,
+        center: true,
         sortable: true,
       },
       {
         name: "개인 세션 ID",
         selector: (row: IMemberListInfo) => row.sessionId,
+        center: true,
         sortable: true,
       },
       {
         name: "요금",
         selector: (row: IMemberListInfo) => row.planName,
+        center: true,
         sortable: true,
       },
       {
         name: "가입일",
         selector: (row: IMemberListInfo) =>
           moment(row.registerDatetime).format("YYYY-MM-DD"),
+        center: true,
         sortable: true,
       },
       {
         name: "팀원",
         selector: (row: IMemberListInfo) => row.members,
+        center: true,
         sortable: true,
       },
       {
         name: "국가",
         selector: (row: IMemberListInfo) => row.country,
+        center: true,
         sortable: true,
       },
     ];

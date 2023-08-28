@@ -131,3 +131,16 @@
   text-align: center;
   margin-top: 20px;
 }
+.inquiry_imageList_div {
+  display: flex;
+}
+.inquiry_image_div {
+  margin-right: 10px;
+}
+.inquiry_image_left_btn {
+  border: 1px solid #d0d5d8;
+}
+.inquiry_image_right_btn {
+  border: 1px solid #d0d5d8;
+  float: right;
+}
