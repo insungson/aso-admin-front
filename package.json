@@ -17,6 +17,7 @@
     "@types/react-draft-wysiwyg": "1.13.4",
     "axios": "1.4.0",
     "craco-alias": "3.0.1",
+    "cross-env": "7.0.3",
     "date-fns": "2.30.0",
     "draftjs-to-html": "0.9.1",
     "formik": "2.4.3",

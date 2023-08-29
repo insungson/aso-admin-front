@@ -7,7 +7,11 @@ const authSlice = createSlice({
   initialState: {
     userInfo: null as authModel.IUserInfo | null,
   },
-  reducers: {},
+  reducers: {
+    setLogout: (state) => {
+      state.userInfo = null;
+    },
+  },
   extraReducers: (builder) => {
     // 로그인 요청
     builder.addCase(
